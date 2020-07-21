@@ -1,0 +1,38 @@
+# .env
+
+.env*
+*.env
+
+# OS X
+
+.DS_Store*
+Icon?
+._*
+
+# Windows
+
+Thumbs.db
+thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+
+.directory
+*~
+
+# NPM
+
+node_modules
+package-lock.json
+*.log
+*.gz
+
+# Others
+
+.vscode
+.cache
+build
+*.egg-info
+.temp
+temp
