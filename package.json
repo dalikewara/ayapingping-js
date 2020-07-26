@@ -1,8 +1,8 @@
 {
   "name": "appjs",
-  "version": "1.0.0",
-  "description": "AyaPingPing is the `basename` of my starter pack framework for building REST API applications. The goal is to create a simple, clean, and maintainable application environment that also has advantages in performance and security. The first AyaPingPing was made only for building REST API in NodeJS. It was around 2018/2019, when NodeJS became the only one programming language I worked with. But now, I learn and work with some new programming languages. So, I implement AyaPingPing in other programming languages.",
-  "main": ".eslintrc.js",
+  "version": "3.0.1",
+  "description": "This is the implementation of AyaPingPing in NodeJS. The name become AyaPingPing JS, or called appjs",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/dalikewara/appjs.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Dali Kewara",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dalikewara/appjs/issues"
   },
-  "homepage": "https://github.com/dalikewara/appjs#readme",
+  "homepage": "https://github.com/dalikewara/appjs",
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

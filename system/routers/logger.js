@@ -27,9 +27,10 @@ var defaultEnv = {
  * Default configuration variables.
  */
 
-// var defaultConfig = {
-//   myKey: 'my value'
-// };
+var defaultConfig = {
+  requestBodyLength: null,
+  responseBodyLength: 5000
+};
 
 /**
  * Main module - Logger.
@@ -56,7 +57,7 @@ exports.logger = function (app, proto, config, resolve, reject) {
     };
     res.end = function(...restArgs) {
       if (restArgs[0]) chunks.push(Buffer.from(restArgs[0]));
-      var logObjs = logObj(req, res, Buffer, chunks);
+      var logObjs = logObj(req, res, Buffer, chunks, config);
       res.locals.__LOGGER__.obj = logObjs;
       setLoggerToken(res.locals.__LOGGER__.obj);
       oldEnd.apply(res, restArgs);
@@ -151,6 +152,7 @@ function getMorganFormat(format) {
 }
 
 function setLoggerToken(obj) {
+  var responseBodyLength = 
   morgan.token('__LOGGER__', function(req, res, param) {
     switch (param) {
       case 'header':
@@ -169,10 +171,10 @@ function setLoggerToken(obj) {
           obj.contentType + '\n';
       case 'requestBody':
         return (!defaultEnv.requestBody) ? '' :
-          'BODY      : ' + obj.requestBodyString + '\n';
+          'BODY      : ' + obj.requestBodyShort + '\n';
       case 'responseBody':
         return (!defaultEnv.responseBody) ? '' :
-          'RESPONSE  : ' + obj.responseBodyString + '\n';
+          'RESPONSE  : ' + obj.responseBodyShort + '\n';
       case 'end':
         return '\n ';
       default:
@@ -181,7 +183,9 @@ function setLoggerToken(obj) {
   });
 }
 
-function logObj(req, res, Buffer, chunks) {
+function logObj(req, res, Buffer, chunks, config) {
+  var requestBodyLength = config.requestBodyLength || defaultConfig.requestBodyLength;
+  var responseBodyLength = config.responseBodyLength || defaultConfig.responseBodyLength;
   var obj = {};
   obj.ipAddress = getIpAddress(req);
   obj.endpoint = getEndpoint(req);
@@ -194,6 +198,18 @@ function logObj(req, res, Buffer, chunks) {
   obj.requestBodyString = JSON.stringify(obj.requestBody);
   obj.responseBody = getResponseBody(Buffer, chunks);
   obj.responseBodyString = JSON.stringify(obj.responseBody);
+  if (!requestBodyLength || (requestBodyLength &&
+    (obj.requestBodyString.length <= requestBodyLength))) {
+    obj.requestBodyShort = obj.requestBodyString;
+  } else {
+    obj.requestBodyShort = obj.requestBodyString.slice(0, requestBodyLength) + '...(ONLY SHOW ' + requestBodyLength + ' CHARS)';
+  }
+  if (!responseBodyLength || (responseBodyLength && 
+  (obj.responseBodyString.length <= responseBodyLength))) {
+    obj.responseBodyShort = obj.responseBodyString;
+  } else {
+    obj.responseBodyShort = obj.responseBodyString.slice(0, responseBodyLength) + '...(ONLY SHOW ' + responseBodyLength + ' CHARS)';
+  }
   return obj;
 }
 

@@ -1,0 +1,22 @@
+{
+  "system_modules": {
+    "path": "system/modules",
+    "use": [
+      "mongo",
+      "mysql",
+      "helpers"
+    ],
+    "config": {}
+  }, 
+  "system_routers": {
+    "path": "system/routers",
+    "use_before_app": [
+      "logger::logger",
+      "allowedContentType",
+      "bodyParser",
+      "staticFiles"
+    ],
+    "use_after_app": [],
+    "config": {}
+  }
+}

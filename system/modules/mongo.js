@@ -57,16 +57,16 @@ module.exports = function(proto, config, resolve, reject) {
     useUnifiedTopology: config.useUnifiedTopology || defaultConfig.useUnifiedTopology,
   };
   mongoose.connect('mongodb://' + defaultEnv.host + ':' + defaultEnv.port + '/' + 
-  defaultEnv.name, options).catch(function (err) {
+  defaultEnv.name, options).catch(function(err) {
     reject(err);
   });
-  mongoose.connection.once('open', function () {
+  mongoose.connection.once('open', function() {
     var mongoModelPath = path.join(projectRoot, config.modelPath || defaultConfig.modelPath);
     if (fs.existsSync(mongoModelPath)) {
-      fs.readdir(mongoModelPath, function (err, files) {
+      fs.readdir(mongoModelPath, function(err, files) {
         if (err) return reject(err);
-        var modelList = files.filter(function (model) {
-          model.match('.js');
+        var modelList = files.filter(function(model) {
+          return model.match('.js');
         });
         var models = {};
         modelList.forEach(function(model) {
@@ -74,14 +74,14 @@ module.exports = function(proto, config, resolve, reject) {
           var modelName = model.replace('.js', '');
           models[modelName] = Model(mongoose);
         });
-        console.info('[*] Mongo connected with ' + Object.keys(models).length + ' model(s)');
+        console.log('[*] Mongo connected with ' + Object.keys(models).length + ' model(s)');
         resolve({
           connection: mongoose,
           models: models
         });
       });
     } else {
-      console.info('[*] Mongo connected with 0 model');
+      console.log('[*] Mongo connected with no model');
       resolve({
         connection: mongoose,
         models: {}

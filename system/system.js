@@ -22,7 +22,7 @@ var express = require('express');
 var defaultPort = 3000;
 var defaultServiceName = 'AyaPingPing JS';
 var defaultEnvFilepath = '.env';
-var defaultConfigFilepath = 'config.json';
+var defaultConfigFilepath = 'app.json';
 var defaultControllerPath = 'controllers';
 var defaultMiddlewarePath = 'middlewares';
 var defaultConfig = {
@@ -609,7 +609,7 @@ function registerStack(resolve, reject) {
     if (!appjs.__proto.__app._router || 
     (appjs.__proto.__app._router && 
     appjs.__proto.__app._router.stack.length < 1))
-      return resolve('[ ] 0 route registered');
+      return resolve('[ ] No route registered');
     var n = 0;
     appjs.__proto.__app._router.stack.forEach(function(val) {
       if (val.route && val.route.path) {
@@ -639,7 +639,7 @@ function registerSystemModules(resolve, reject) {
   var modules = config.use;
   var l = modules.length;
   var n = 0;
-  if (modules < 1) return resolve('[ ] 0 system module loaded');
+  if (modules < 1) return resolve('[ ] No system module loaded');
   repeator(0, function(repeat) {
     try {
       if (n >= l) return repeat(false);
@@ -760,7 +760,7 @@ function registerSystemRoutersAfterApp(resolve, reject) {
   appjs.__proto.__var.__totalLoadedSystemRouters = 
     appjs.__proto.__var.__totalLoadedSystemRouters + l;
   if (appjs.__proto.__var.__totalLoadedSystemRouters < 1) 
-    return resolve('[ ] 0 system router loaded');
+    return resolve('[ ] No system router loaded');
   if (routers < 1) return resolve('[*] ' + 
     appjs.__proto.__var.__totalLoadedSystemRouters + ' system router(s) loaded');
   repeator(0, function (repeat) {

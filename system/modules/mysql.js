@@ -108,18 +108,18 @@ module.exports = function (proto, config, resolve, reject) {
       fs.readdir(mysqlModelPath, function (err, files) {
         if (err) return reject(err);
         var modelList = files.filter(function (model) {
-          model.match('.js');
+          return model.match('.js');
         });
         var models = {};
         modelList.forEach(function (model) {
-          var Model = sequelize.import(path.join(mysqlModelPath, model));
+          var Model = require(path.join(mysqlModelPath, model))(sequelize, Sequelize);
           var modelName = model.replace('.js', '');
           models[modelName] = Model;
         });
         Object.keys(models).forEach(function (model) {
           if (models[model].associate) models[model].associate(models);
         });
-        console.info('[*] MySQL connected with ' + Object.keys(models).length + ' model(s)');
+        console.log('[*] MySQL connected with ' + Object.keys(models).length + ' model(s)');
         resolve({
           connection: sequelize,
           models: models,
@@ -127,7 +127,7 @@ module.exports = function (proto, config, resolve, reject) {
         });
       });
     } else {
-      console.info('[*] MySQL connected with 0 model');
+      console.log('[*] MySQL connected with no model');
       resolve({
         connection: sequelize,
         models: {},
