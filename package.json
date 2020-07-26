@@ -1,7 +1,7 @@
 {
   "name": "appjs",
   "version": "3.0.1",
-  "description": "This is the implementation of AyaPingPing in NodeJS. The name become AyaPingPing JS, or called appjs",
+  "description": "My starter pack framework in NodeJS for building REST API applications.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
