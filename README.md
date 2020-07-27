@@ -43,11 +43,11 @@ Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda 
 Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berikut:
 
 -  **`.env`**
-  *File* untuk konfigurasi *environment variable*.
--  **`app.js`**
-  *File* utama `appjs` untuk *start/listen* aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
+  *File* untuk konfigurasi *environment variables*.
 -  **`app.json`**
   *File* untuk konfigurasi sistem aplikasi. Disini Anda bisa mengatur aktivasi dari `sistem modul` dan `sistem router`.
+-  **`app.js`**
+  *File* utama `appjs` untuk *start/listen* aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
 -  **`controllers`**
   *Folder* untuk menaruh *file-file*  `controller` dari *route* yang Anda buat.
 -  **`middlewares`**
@@ -60,3 +60,49 @@ Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berik
   *Folder* untuk menaruh *file-file*  `setting`. `setting` disini adalah *custom setting* (*OPTIONAL*) yang Anda buat sendiri untuk membantu pengerjaan aplikasi Anda, misalnya: Anda bisa membuat *file*  `email_templates.json` (*setting template* untuk email) di dalam *folder*  `settings`.
 
 ## Environment variables
+
+*Environment variables* menentukan bagaimana sistem aplikasi berjalan tergantung pada jenis *environment server* atau komputer yang dipakai. `appjs` memiliki 3 *environment variables* utama berikut ini yang digunakan ketika aplikasi di *start*:
+
+```
+NODE_ENV=development
+SERVICE_NAME=AyaPingPing JS
+PORT=3000
+```
+
+Environment variables di `appjs` disimpan didalam file `.env`.
+
+> Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Anda dapat melakukan hal ini dengan me *load* nya di dalam `app.js` dengan script `appjs.env()` setelah inisialisasi objek `appjs`.
+
+### Application environment
+
+`NODE_ENV` mengatur mode *environment* aplikasi yang sedang berjalan, *default*: "development". Untuk merubah *environment* aplikasi ke mode `production`, ubah nilai `NODE_ENV` menjadi "production":
+
+```
+NODE_ENV=production
+```
+
+> `NODE_ENV` dipakai oleh ExpressJS untuk menentukan *environment* aplikasi.
+> 
+> Selalu gunakan mode `production` apabila Anda ingin melakukan *deployment* ke arsitektur atau *environment production*.
+
+### Service name
+
+`SERVICE_NAME` adalah nama dari aplikasi `appjs`, *default*: "AyaPingPing JS". Anda bisa merubahnya sesuai dengan nama aplikasi yang sedang Anda buat, misalnya:
+
+```
+SERVICE_NAME=My Application
+```
+
+> `SERVICE_NAME` dipakai untuk beberapa hal di dalam sistem aplikasi, misalnya: nama aplikasi yang ditampilkan di `console`.
+
+### Port
+
+`PORT` menentukan *port* yang akan di listen pada saat aplikasi dijalankan, default: "3000". Anda bisa merubah pengaturan *port*nya sesuai dengan kebutuhan, misalnya:
+
+```
+PORT=8000
+```
+
+> `PORT` diperlukan oleh sistem aplikasi agar bisa berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
+
+## System configurations
