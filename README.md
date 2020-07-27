@@ -38,7 +38,7 @@ Jika berhasil, maka akan muncul keterangan "Application is live!" seperti ini:
 
 Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda juga bisa *test* dengan membuka browser -> http://localhost:3000.
 
-### Working directory
+## Working directory
 
 Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berikut:
 
@@ -59,4 +59,4 @@ Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berik
 -  **`settings`**
   *Folder* untuk menaruh *file-file*  `setting`. `setting` disini adalah *custom setting* (*OPTIONAL*) yang Anda buat sendiri untuk membantu pengerjaan aplikasi Anda, misalnya: Anda bisa membuat *file*  `email_templates.json` (*setting template* untuk email) di dalam *folder*  `settings`.
 
-### .env
+## .env
