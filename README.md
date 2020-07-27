@@ -51,7 +51,7 @@ Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berik
 -  **`controllers`**
   *Folder* untuk menaruh *file-file*  `controller` dari *route* yang Anda buat.
 -  **`middlewares`**
-  *Folder* untuk menaruh *file-file*  `middleware` dari *route* yang Anda buat.
+  *Folder* untuk menaruh *file-file*  `middleware` dari *route* yang Anda buat. `middleware` disini bersifat *OPTIONAL*, karena Anda boleh membuat *route* tanpa `middleware`.
 -  **`models`**
   *Folder* untuk menaruh *file-file*  `model`  *database*, misalnya: *Sequelize model* untuk MySQL atau *Mongoose model* untuk Mongo. `model` disini bersifat *OPTIONAL*, karena Anda mungkin menggunakan mekanisme *raw* daripada model *database*.
 -  **`helpers`**
