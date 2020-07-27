@@ -26,7 +26,9 @@ Pada `v3`, AyaPingPing menawarkan mekanisme *Internal System Management*. *Inter
 
 # Basic usage
 
-`appjs` berbasis ExpressJS. Bagi yang familiar dengan ExpressJS tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan *clone/download*  *repo* ini. Di *local environment* Anda, silahkan masuk ke *folder repo*  `appjs` yang telah di *clone* tadi (*root project*). Buka terminal baru dan jalankan perintah berikut ini untuk menjalankan `appjs`:
+`appjs` berbasis ExpressJS. Bagi yang familiar dengan ExpressJS tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan *clone/download*  *repo* ini. Di *local environment* Anda, silahkan masuk ke *folder repo*  `appjs` yang telah di *clone* tadi (*root project*). 
+
+Ubah nama file `.env.example` menjadi `.env`, kemudian buka terminal baru dan jalankan perintah berikut ini untuk menjalankan `appjs`:
 
 ```bash
 node app.js
