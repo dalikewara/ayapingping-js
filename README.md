@@ -144,7 +144,7 @@ PORT=8000
 
 > `PORT` diperlukan oleh sistem aplikasi agar bisa berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
 
-# System & Configurations
+# System & Configuration
 
 ### System
 
