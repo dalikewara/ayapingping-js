@@ -54,7 +54,7 @@ Kemudian di *folder* `controller` buat *file* bernama `myRouteController.js` dan
 'use strict';
 
 module.exports = function(mod, req, res, next) {
-	res.send('Hello world!');
+  res.send('Hello world!');
 };
 ```
 
@@ -67,11 +67,11 @@ Anda juga bisa membuat *route* baru di `app.js` dengan gaya `ExpressJS` seperti 
 ```javascript
 appjs.express((mod, app) => {
 
-	// ExpressJS style
-	app.get('/my-route', (req, res, next) => {
-		res.send('Hello world!');
-	});
-	
+  // ExpressJS style
+  app.get('/my-route', (req, res, next) => {
+    res.send('Hello world!');
+  });
+
 });
 ```
 
@@ -170,17 +170,17 @@ Konfigurasi sistem `appjs` ada pada *file* `app.json`.  Anda bisa mengatur aktiv
 
 ```json
 {
-	"system_modules": {
-		"path": "system/modules",
-		"use": [],
-		"config": {}
-	},
-	"system_routers": {
-		"path": "system/routers",
-		"use_before_app": [],
-		"use_after_app": [],
-		"config": {}
-	}
+  "system_modules": {
+    "path": "system/modules",
+    "use": [],
+    "config": {}
+  },
+  "system_routers": {
+    "path": "system/routers",
+    "use_before_app": [],
+    "use_after_app": [],
+    "config": {}
+  }
 }
 ```
 
