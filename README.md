@@ -60,7 +60,7 @@ module.exports = function(mod, req, res, next) {
 
 Jika Anda mengakses *route* `GET '/my-route'`, maka Anda akan mendapatkan *respon* "Hello world!".
 
-### Simple routing (ExpressJS style)
+### Simple routing (`ExpressJS` style)
 
 Anda juga bisa membuat *route* baru di `app.js` dengan gaya `ExpressJS` seperti berikut ini:
 
