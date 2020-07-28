@@ -26,7 +26,7 @@ Pada `v3`, AyaPingPing menawarkan mekanisme *Internal System Management*. *Inter
 
 # Basic usage
 
-`appjs` berbasis ExpressJS. Bagi yang familiar dengan ExpressJS tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan *clone/download*  *repo* ini. Di *local environment* Anda, silahkan masuk ke *folder repo*  `appjs` yang telah di *clone* tadi (*root project*). 
+`appjs` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan *clone/download*  *repo* ini. Di *local environment* Anda, silahkan masuk ke *folder repo*  `appjs` yang telah di *clone* tadi (*root project*). 
 
 Ubah nama file `.env.example` menjadi `.env`, kemudian buka terminal baru dan jalankan perintah berikut ini untuk menjalankan `appjs`:
 
@@ -39,6 +39,41 @@ Jika berhasil, maka akan muncul keterangan "Application is live!" seperti ini:
 ![https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no](https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no)
 
 Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda juga bisa *test* dengan membuka browser -> http://localhost:3000.
+
+### Simple routing (`appjs` style)
+
+Anda bisa membuat *route* baru di `app.js` seperti ini:
+
+```javascript
+appjs.get('/my-route', 'myRouteController');
+```
+
+Kemudian di *folder* `controller` buat *file* bernama `myRouteController.js` dan isikan:
+
+```javascript
+'use strict';
+
+module.exports = function(mod, req, res, next) {
+	res.send('Hello world!');
+};
+```
+
+Jika Anda mengakses *route* `GET '/my-route'`, maka Anda akan mendapatkan *respon* "Hello world!".
+
+### Simple routing (ExpressJS style)
+
+Anda juga bisa membuat *route* baru di `app.js` dengan gaya `ExpressJS` seperti berikut ini:
+
+```javascript
+appjs.express((mod, app) => {
+
+	// ExpressJS style
+	app.get('/my-route', (req, res, next) => {
+		res.send('Hello world!');
+	});
+	
+});
+```
 
 ## Working directory
 
