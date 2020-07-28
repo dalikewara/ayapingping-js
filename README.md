@@ -71,9 +71,11 @@ SERVICE_NAME=AyaPingPing JS
 PORT=3000
 ```
 
-*Environment variables* di `appjs` disimpan didalam file `.env`.
+*Environment variables* di `appjs` disimpan didalam file `.env`. Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda dapat melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `appjs system`: (lihat contohnya di `app.js`)
 
-> Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Anda dapat melakukan hal ini dengan me *load* nya di dalam `app.js` dengan script `appjs.env()` setelah inisialisasi objek `appjs`.
+```javascript
+appjs.env();
+```
 
 ### Application environment
 
