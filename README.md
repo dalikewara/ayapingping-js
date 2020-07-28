@@ -47,7 +47,7 @@ Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berik
 -  **`.env`**
   *File* untuk konfigurasi *environment variables*.
 -  **`app.json`**
-  *File* untuk konfigurasi sistem aplikasi. Disini Anda bisa mengatur aktivasi dari `sistem modul` dan `sistem router`.
+  *File* untuk konfigurasi sistem aplikasi. Disini Anda bisa mengatur aktivasi *plugin* dari `system modules` dan `system routers`.
 -  **`app.js`**
   *File* utama `appjs` untuk *start/listen* aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
 -  **`controllers`**
@@ -107,4 +107,55 @@ PORT=8000
 
 > `PORT` diperlukan oleh sistem aplikasi agar bisa berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
 
-## System configurations
+## System & Configurations
+
+### System
+
+Sistem utama `appjs` berada pada *file* `system.js` yang ada di dalam *folder* `system`. Untuk dapat menjalankan `appjs`,  Anda harus memanggil `system.js` dan menginisialisasi objeknya. Anda dapat melakukannya dengan menggunakan *script* berikut: (lihat contohnya di `app.js`)
+
+```javascript
+const appjs = require('./system/system.js')(__dirname);
+```
+
+*Script* diatas akan menginisialisasi semua objek dan fungsionalitas sistem yang dibutuhkan untuk menjalankan `appjs`. Diantara fungsionalitas tersebut ialah fungsi untuk membuat *routing*, fungsi untuk konfigurasi, fungsi untuk *environment variables*, hingga fungsi untuk *listen* aplikasi.
+
+> Anda sebaiknya tidak merubah apapun yang ada pada *file* `system.js`.
+
+### Configuration
+
+Sebelum Anda dapat menggunakan *file* konfigurasi, Anda terlebih dahulu harus memanggil fungsi konfigurasi setelah inisialisasi `appjs system`: (lihat contohnya di `app.js`)
+
+```javascript
+appjs.config();
+```
+
+Konfigurasi sistem `appjs` ada pada *file* `app.json`.  Anda bisa mengatur aktivasi *plugin* `system modules` dan `system routers`. Berikut adalah struktur dan pengaturan awal dari *file* `app.json`:
+
+```json
+{
+	"system_modules": {
+		"path": "system/modules",
+		"use": [],
+		"config": {}
+	},
+	"system_routers": {
+		"path": "system/routers",
+		"use_before_app": [],
+		"use_after_app": [],
+		"config": {}
+	}
+}
+```
+
+> Secara *default*, `appjs` menyediakan beberapa *plugins* yang bisa digunakan.
+
+- **System modules**
+	- **path**
+	- **use**
+	- **config**
+
+- **System routers**
+	- **path**
+	- **use_before_app**
+	- **use_after_app**
+	- **config**
