@@ -196,3 +196,23 @@ Konfigurasi sistem `appjs` ada pada *file* `app.json`.  Anda bisa mengatur aktiv
 	- **use_before_app**
 	- **use_after_app**
 	- **config**
+
+# Plugins
+
+### How to create plugins
+
+### How to use plugins
+
+### Plugin configuration
+
+# Application
+
+# Controllers
+
+# Middlewares
+
+# Models
+
+# Helpers
+
+# Settings
