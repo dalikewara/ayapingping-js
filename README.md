@@ -207,6 +207,8 @@ Konfigurasi sistem `appjs` ada pada *file* `app.json`.  Anda bisa mengatur aktiv
 
 # Application
 
+# Routing
+
 # Controllers
 
 # Middlewares
