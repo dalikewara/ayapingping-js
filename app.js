@@ -1,10 +1,11 @@
 'use strict';
 
-const appjs = require('./system/system.js')(__dirname);
+const appjs = require('./index.js')(__dirname);
 
 appjs.env();
-appjs.config();
 
-appjs.get('/example', 'exampleController');
+appjs.load('example');
+
+appjs.get('/example');
 
 appjs.listen();
