@@ -12,7 +12,7 @@
  * @optional
  */
 
-var fs = require('fs');
+const fs = require('fs');
 
 /**
  * Default environment.
@@ -23,7 +23,7 @@ var fs = require('fs');
  * @optional
  */
 
-var defaultEnv = {
+const defaultEnv = {
   MY_VALUE: process.env.MY_VALUE || 'my value'
 };
 
@@ -39,7 +39,7 @@ var defaultEnv = {
  * @optional
  */
 
-var defaultOption = {
+const defaultOption = {
   myKey: process.appjsPlgOpt.myKey || 'my value'
 };
 
