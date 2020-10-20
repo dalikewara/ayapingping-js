@@ -4,7 +4,7 @@ const appjs = require('./index.js')(__dirname);
 
 appjs.env();
 
-appjs.load('example');
+appjs.load('examplePlugin');
 
 appjs.get('/example');
 
