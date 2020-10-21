@@ -22,7 +22,7 @@ Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya me
 
 `appjs v3` merupakan pengembangan dari `v2.1`. Meskipun sebagian besar fungsinya masih mirip dengan `v2.1`, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki di `v3`. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru&mdash;tidak seperti `v0.1` - `v2.1`.
 
-Pada `v3`, AyaPingPing menawarkan mekanisme *Internal System Management*. *Internal system* disini adalah *custom process* berupa *module/router* yang akan dieksekusi pada saat aplikasi pertama di *start*. Kita bisa menambahkan fungsi-fungsi *internal* sesuai kebutuhan kita, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengontrol jalannya aplikasi.
+Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin* kita sendiri atau menggunakan *built in plugin* yang tersedia, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengatur jalannya aplikasi.
 
 # Getting started
 
