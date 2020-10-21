@@ -28,9 +28,30 @@ Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin
 
 ### Installation
 
+`ayapingping-js` tersedia di *NPM package manager*. Untuk meng*install*, pertama buat dulu *folder project* Anda dan masuk kedalam *folder* tersebut:
+
+```bash
+mkdir my-project
+cd my-project
+```
+
+Kemudian, install `ayapingping-js` dengan perintah berikut:
+
+```bash
+npm install ayapingping-js
+```
+
+Setelah proses *install* berhasil, eksekusi perintah berikut untuk membuat *working directory* dari `ayapingping-js`:
+
+```bash
+./node_modules/.bin/ayapingping-js-create
+```
+
+Perintah diatas akan membuat *folders* dan *files* baru seperti: `app.js`, `.env`, `controllers`, dll yang dibutuhkan untuk memulai menggunakan `ayapingping-js`.
+
 ### Basic usage
 
-`ayapingping-js` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `ayapingping-js`, silahkan install terlebih dahulu sesuai dengan petunjuk installasi diatas. Setelah itu, masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
+`ayapingping-js` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `ayapingping-js`, silahkan *install* terlebih dahulu sesuai dengan petunjuk *installation* diatas. Masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
 
 ```bash
 node app.js
