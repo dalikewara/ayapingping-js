@@ -1,5 +1,5 @@
 {
-  "name": "appjs",
+  "name": "ayapingping-js",
   "version": "3.0.1",
   "description": "My starter pack framework in NodeJS for building REST API applications.",
   "main": "app.js",
@@ -7,14 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "appjs-create": "./bin/appjs-create.js"
+    "ayapingping-js-create": "./bin/ayapingping-js-create.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dalikewara/appjs.git"
+    "url": "git+https://github.com/dalikewara/ayapingping-js.git"
   },
   "keywords": [
-    "appjs",
+    "ayapingping-js",
     "starterpack",
     "framework",
     "rest api",
@@ -31,9 +31,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dalikewara/appjs/issues"
+    "url": "https://github.com/dalikewara/ayapingping-js/issues"
   },
-  "homepage": "https://github.com/dalikewara/appjs",
+  "homepage": "https://github.com/dalikewara/ayapingping-js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

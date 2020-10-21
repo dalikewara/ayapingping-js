@@ -2,17 +2,17 @@
 
 AyaPingPing is the `basename` of my starter pack framework for building REST API applications. The goal is to create a simple, clean, and maintainable application environment that also has advantages in performance and security. The first AyaPingPing was made only for building REST API in NodeJS. It was around 2018/2019, when NodeJS became the only one programming language I worked with. But now, I learn and work with some new programming languages. So, I implement AyaPingPing in other programming languages.
 
-# AyaPingPing JS (appjs)
+# AyaPingPing JS (ayapingping-js)
 
-And this is the implementation of AyaPingPing in NodeJS. The name become AyaPingPing JS, or called `appjs`.
+And this is the implementation of AyaPingPing in NodeJS. The name become AyaPingPing JS, or called `ayapingping-js`.
 
 > English documentation would be available soon.
 
-# `appjs v3`
+# `ayapingping-js v3`
 
 Kenapa versi 3?
 
-`appjs v3` adalah versi pertama yang saya rilis untuk umum. AyaPingPing pada awalnya saya buat untuk memenuhi kebutuhan *development* di tempat kerja. Mulai dari `v0.1` hingga terakhir `v2.1` dengan serangkaian optimasi yang terus dilakukan untuk menangani kelemahan-kelematan pada versi sebelumnya. Hingga `v2.1`, AyaPingPing masih bersifat *private*.
+`ayapingping-js v3` adalah versi pertama yang saya rilis untuk umum. AyaPingPing pada awalnya saya buat untuk memenuhi kebutuhan *development* di tempat kerja. Mulai dari `v0.1` hingga terakhir `v2.1` dengan serangkaian optimasi yang terus dilakukan untuk menangani kelemahan-kelematan pada versi sebelumnya. Hingga `v2.1`, AyaPingPing masih bersifat *private*.
 
 AyaPingPing bisa terus berkembang adalah karena kontribusi dari rekan-rekan *developer* di kantor. Mereka mendukung saya, memberikan kritik dan masukan, serta melaporkan *issue*, bahkan rela mengembangkan sistem baru di dalam AyaPingPing&mdash;yang semuanya itu bertujuan membantu agar *framework* ini menjadi lebih baik.
 
@@ -20,7 +20,7 @@ Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya me
 
 # Welcome to `v3`
 
-`appjs v3` merupakan pengembangan dari `v2.1`. Meskipun sebagian besar fungsinya masih mirip dengan `v2.1`, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki di `v3`. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru&mdash;tidak seperti `v0.1` - `v2.1`.
+`ayapingping-js v3` merupakan pengembangan dari `v2.1`. Meskipun sebagian besar fungsinya masih mirip dengan `v2.1`, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki di `v3`. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru&mdash;tidak seperti `v0.1` - `v2.1`.
 
 Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin* kita sendiri atau menggunakan *built in plugin* yang tersedia, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengatur jalannya aplikasi.
 
@@ -30,13 +30,13 @@ Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin
 
 ### Basic usage
 
-`appjs` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan install terlebih dahulu sesuai dengan petunjuk installasi diatas. Setelah itu, masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
+`ayapingping-js` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `ayapingping-js`, silahkan install terlebih dahulu sesuai dengan petunjuk installasi diatas. Setelah itu, masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
 
 ```bash
 node app.js
 ```
 
-Anda juga bisa menggunakan `pm2` untuk menjalankan `appjs`. Contoh:
+Anda juga bisa menggunakan `pm2` untuk menjalankan `ayapingping-js`. Contoh:
 
 ```bash
 pm2 start app.js
@@ -48,7 +48,7 @@ Jika berhasil, maka akan muncul keterangan "Application is live!" seperti ini:
 
 Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda juga bisa *test* dengan membuka browser -> http://localhost:3000.
 
-### Simple routing (`appjs` style)
+### Simple routing (`ayapingping-js` style)
 
 Anda bisa membuat *route* sederhana di `app.js` dengan format seperti berikut:
 
@@ -86,12 +86,12 @@ appjs.express((mod, app) => {
 
 # Working directory
 
-Secara *default* `appjs` membagi tempat kerja menjadi bagian-bagian berikut:
+Secara *default* `ayapingping-js` membagi tempat kerja menjadi bagian-bagian berikut:
 
 -  **`.env`**
   *File* untuk konfigurasi *environment variables*.
 -  **`app.js`**
-  *File* utama `appjs` untuk *start/listen*/mengatur jalannya aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
+  *File* utama `ayapingping-js` untuk *start/listen*/mengatur jalannya aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
 -  **`controllers`**
   *Folder* untuk menaruh *file* `controller` dari *route* yang Anda buat.
 -  **`middlewares`** *(OPTIONAL)*
@@ -105,7 +105,7 @@ Secara *default* `appjs` membagi tempat kerja menjadi bagian-bagian berikut:
 
 # Environment variables
 
-*Environment variables* menentukan bagaimana sistem aplikasi berjalan tergantung pada jenis *environment server* atau komputer yang dipakai. `appjs` memiliki 3 *environment variables* utama berikut ini yang digunakan ketika aplikasi di *start*:
+*Environment variables* menentukan bagaimana sistem aplikasi berjalan tergantung pada jenis *environment server* atau komputer yang dipakai. `ayapingping-js` memiliki 3 *environment variables* utama berikut ini yang digunakan ketika aplikasi di *start*:
 
 ```
 NODE_ENV=development
@@ -113,10 +113,10 @@ SERVICE_NAME=AyaPingPing JS
 PORT=3000
 ```
 
-*Environment variables* di `appjs` disimpan didalam file `.env`. Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda bisa melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `appjs system`: (lihat contohnya di `app.js`)
+*Environment variables* di `ayapingping-js` disimpan didalam file `.env`. Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda bisa melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `ayapingping-js system`: (lihat contohnya di `app.js`)
 
 ```javascript
-appjs.env();
+ayapingping-js.env();
 ```
 
 ### Application environment
@@ -133,7 +133,7 @@ NODE_ENV=production
 
 ### Service name
 
-`SERVICE_NAME` adalah nama dari aplikasi `appjs`, *default*: "AyaPingPing JS". Anda bisa merubahnya sesuai dengan nama aplikasi yang sedang Anda buat, misalnya:
+`SERVICE_NAME` adalah nama dari aplikasi `ayapingping-js`, *default*: "AyaPingPing JS". Anda bisa merubahnya sesuai dengan nama aplikasi yang sedang Anda buat, misalnya:
 
 ```
 SERVICE_NAME=My Application
@@ -153,7 +153,7 @@ PORT=8000
 
 # Application
 
-### Available `appjs` functions
+### Available `ayapingping-js`'s functions
 
 # Routing
 

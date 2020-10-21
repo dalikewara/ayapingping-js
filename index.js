@@ -7,4 +7,4 @@
 
 'use strict';
 
-module.exports = require('./lib/appjs.js');
+module.exports = require('./lib/ayapingping-js.js');
