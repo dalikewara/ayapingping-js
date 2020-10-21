@@ -37,7 +37,7 @@ module.exports = function (proto, req, res, next) {
 
 /**
  * You can also use controller's method.
- * 
+ *
  * In app.js
  *
  * Format: controllerName::controllerMethod

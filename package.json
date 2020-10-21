@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "appjs": "./bin/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dalikewara/appjs.git"
@@ -23,7 +26,6 @@
     "mongoose": "^5.9.21",
     "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
-    "on-finished": "^2.3.0",
     "sequelize": "^6.2.4"
   }
 }
