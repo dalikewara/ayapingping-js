@@ -153,13 +153,37 @@ PORT=8000
 
 # Application
 
+### Available `appjs` functions
+
 # Routing
+
+### Route functions
+
+### Route controller
+
+### Route middleware
+
+### Grouping
+
+### ExpressJS style
 
 # Controllers
 
+### Using controller
+
+### Using controller method
+
 # Middlewares
 
+### Using middleware
+
+### Using middleware method
+
 # Models
+
+### MySQL model
+
+### Mongo model
 
 # Plugins
 
