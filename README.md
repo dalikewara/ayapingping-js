@@ -86,24 +86,22 @@ appjs.express((mod, app) => {
 
 # Working directory
 
-Pada dasarnya, Anda hanya perlu bekerja di *folder-folder* dan *file-file* berikut:
+Secara *default* `appjs` membagi tempat kerja menjadi bagian-bagian berikut:
 
 -  **`.env`**
   *File* untuk konfigurasi *environment variables*.
--  **`app.json`**
-  *File* untuk konfigurasi sistem aplikasi. Disini Anda bisa mengatur aktivasi *plugin* dari `system modules` dan `system routers`.
 -  **`app.js`**
-  *File* utama `appjs` untuk *start/listen* aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
+  *File* utama `appjs` untuk *start/listen*/mengatur jalannya aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
 -  **`controllers`**
-  *Folder* untuk menaruh *file-file*  `controller` dari *route* yang Anda buat.
--  **`middlewares`**
-  *Folder* untuk menaruh *file-file*  `middleware` dari *route* yang Anda buat. `middleware` disini bersifat *OPTIONAL*, karena Anda boleh membuat *route* tanpa `middleware`.
--  **`models`**
-  *Folder* untuk menaruh *file-file*  `model`  *database*, misalnya: *Sequelize model* untuk MySQL atau *Mongoose model* untuk Mongo. `model` disini bersifat *OPTIONAL*, karena Anda mungkin menggunakan mekanisme *raw* daripada model *database*.
--  **`helpers`**
-  *Folder* untuk menaruh *file-file*  `helper`. `helper` disini adalah *custom function* (*OPTIONAL*) yang Anda buat sendiri untuk membantu pengerjaan aplikasi Anda, misalnya: Anda bisa membuat *file*  `mail.js` (fungsi untuk mengirim email) di dalam *folder*  `helpers`.
--  **`settings`**
-  *Folder* untuk menaruh *file-file*  `setting`. `setting` disini adalah *custom setting* (*OPTIONAL*) yang Anda buat sendiri untuk membantu pengerjaan aplikasi Anda, misalnya: Anda bisa membuat *file*  `email_templates.json` (*setting template* untuk email) di dalam *folder*  `settings`.
+  *Folder* untuk menaruh *file* `controller` dari *route* yang Anda buat.
+-  **`middlewares`** *(OPTIONAL)*
+  *Folder* untuk menaruh *file*  `middleware` dari *route* yang Anda buat. `middleware` disini bersifat *optional*, karena Anda boleh membuat *route* tanpa `middleware`.
+-  **`models`** *(OPTIONAL)*
+  *Folder* untuk menaruh *file* `model` *database*, misalnya: *Sequelize model* untuk MySQL atau *Mongoose model* untuk Mongo. `model` disini bersifat *optional*, karena Anda mungkin menggunakan mekanisme *raw* daripada model *database*, atau Anda mungkin tidak menggunakan *database* sama sekali.
+- **`plugin`** *(OPTIONAL)*
+  *Folder* untuk menaruh `plugin` yang Anda buat (*custom plugin*). `plugin` disini bersifat *optional*, karena Anda mungkin tidak menggunakan *custom plugin* sama sekali.
+- **`public`** *(OPTIONAL)*
+  *Folder* untuk menaruh file-file statis. `public` disini bersifat *optional*, karena Anda mungkin tidak menggunakan file-file statis.
 
 # Environment variables
 
@@ -151,68 +149,7 @@ SERVICE_NAME=My Application
 PORT=8000
 ```
 
-> `PORT` diperlukan oleh sistem aplikasi agar bisa berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
-
-# System & Configuration
-
-### System
-
-Sistem utama `appjs` berada pada *file* `system.js` yang ada di dalam *folder* `system`. Untuk dapat menjalankan `appjs`,  Anda harus memanggil `system.js` dan menginisialisasi objeknya. Anda dapat melakukannya dengan menggunakan *script* berikut: (lihat contohnya di `app.js`)
-
-```javascript
-const appjs = require('./system/system.js')(__dirname);
-```
-
-*Script* diatas akan menginisialisasi semua objek dan fungsionalitas sistem yang dibutuhkan untuk menjalankan `appjs`. Diantara fungsionalitas tersebut ialah fungsi untuk membuat *routing*, fungsi untuk konfigurasi, fungsi untuk *environment variables*, hingga fungsi untuk *listen* aplikasi.
-
-> Anda sebaiknya tidak merubah apapun yang ada pada *file* `system.js`.
-
-### Configuration
-
-Sebelum Anda dapat menggunakan *file* konfigurasi, Anda terlebih dahulu harus memanggil fungsi konfigurasi setelah inisialisasi `appjs system`: (lihat contohnya di `app.js`)
-
-```javascript
-appjs.config();
-```
-
-Konfigurasi sistem `appjs` ada pada *file* `app.json`.  Anda bisa mengatur aktivasi *plugin* `system modules` dan `system routers`. Berikut adalah struktur dan pengaturan awal dari *file* `app.json`:
-
-```json
-{
-  "system_modules": {
-    "path": "system/modules",
-    "use": [],
-    "config": {}
-  },
-  "system_routers": {
-    "path": "system/routers",
-    "use_before_app": [],
-    "use_after_app": [],
-    "config": {}
-  }
-}
-```
-
-> Secara *default*, `appjs` menyediakan beberapa *plugins* yang bisa digunakan.
-
-- **System modules**
-	- **path**
-	- **use**
-	- **config**
-
-- **System routers**
-	- **path**
-	- **use_before_app**
-	- **use_after_app**
-	- **config**
-
-# Plugins
-
-### How to create plugins
-
-### How to use plugins
-
-### Plugin configuration
+> `PORT` diperlukan oleh sistem (server) untuk mengidentifikasi proses aplikasi atau *service* yang sedang berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
 
 # Application
 
@@ -224,6 +161,12 @@ Konfigurasi sistem `appjs` ada pada *file* `app.json`.  Anda bisa mengatur aktiv
 
 # Models
 
-# Helpers
+# Plugins
 
-# Settings
+### How to create plugins
+
+### How to use plugins
+
+### Built in plugins
+
+# Public
