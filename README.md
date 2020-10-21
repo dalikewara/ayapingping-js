@@ -24,14 +24,22 @@ Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya me
 
 Pada `v3`, AyaPingPing menawarkan mekanisme *Internal System Management*. *Internal system* disini adalah *custom process* berupa *module/router* yang akan dieksekusi pada saat aplikasi pertama di *start*. Kita bisa menambahkan fungsi-fungsi *internal* sesuai kebutuhan kita, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengontrol jalannya aplikasi.
 
-# Basic usage
+# Getting started
 
-`appjs` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan *clone/download*  *repo* ini. Di *local environment* Anda, silahkan masuk ke *folder repo*  `appjs` yang telah di *clone* tadi (*root project*). 
+### Installation
 
-Ubah nama file `.env.example` menjadi `.env`, kemudian buka terminal baru dan jalankan perintah berikut ini untuk menjalankan `appjs`:
+### Basic usage
+
+`appjs` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `appjs`, silahkan install terlebih dahulu sesuai dengan petunjuk installasi diatas. Setelah itu, masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
 
 ```bash
 node app.js
+```
+
+Anda juga bisa menggunakan `pm2` untuk menjalankan `appjs`. Contoh:
+
+```bash
+pm2 start app.js
 ```
 
 Jika berhasil, maka akan muncul keterangan "Application is live!" seperti ini:
@@ -42,36 +50,37 @@ Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda 
 
 ### Simple routing (`appjs` style)
 
-Anda bisa membuat *route* baru di `app.js` seperti ini:
+Anda bisa membuat *route* sederhana di `app.js` dengan format seperti berikut:
 
 ```javascript
 appjs.get('/my-route', 'myRouteController');
 ```
 
-Kemudian di *folder* `controller` buat *file* bernama `myRouteController.js` dan isikan:
+Di *folder* `controller` buat *file* bernama `myRouteController.js` dan isikan:
 
 ```javascript
 'use strict';
 
-module.exports = function(mod, req, res, next) {
+module.exports = function(proto, req, res, next) {
   res.send('Hello world!');
 };
 ```
 
-Jika Anda mengakses *route* `GET '/my-route'`, maka Anda akan mendapatkan *respon* "Hello world!".
+*Route* baru berhasil dibuat. Jika Anda mengakses *route* `GET '/my-route'`, maka Anda akan mendapatkan *respon* "Hello world!".
 
 ### Simple routing (`ExpressJS` style)
 
-Anda juga bisa membuat *route* baru di `app.js` dengan gaya `ExpressJS` seperti berikut ini:
+Anda juga bisa membuat *route* di `app.js` dengan gaya `ExpressJS` seperti berikut ini:
 
 ```javascript
 appjs.express((mod, app) => {
-
   // ExpressJS style
   app.get('/my-route', (req, res, next) => {
     res.send('Hello world!');
   });
-
+  app.get('/my-route-2', (req, res, next) => {
+    res.send('Hello world! Again!');
+  });
 });
 ```
 
