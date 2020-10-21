@@ -13,7 +13,6 @@ appjs.env();
  */
 
 // appjs.load(pluginName, pluginOption);
-appjs.load('logger')
 
 /**
  * Routes.
