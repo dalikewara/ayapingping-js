@@ -13,7 +13,22 @@
     "type": "git",
     "url": "git+https://github.com/dalikewara/appjs.git"
   },
+  "keywords": [
+    "appjs",
+    "starterpack",
+    "framework",
+    "rest api",
+    "expressjs",
+    "tools"
+  ],
   "author": "Dali Kewara",
+  "contributors": [
+    {
+      "name": "Dali Kewara",
+      "email": "dalikewara@gmail.com",
+      "url": "https://www.dalikewara.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dalikewara/appjs/issues"
