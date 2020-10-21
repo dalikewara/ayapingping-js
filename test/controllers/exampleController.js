@@ -26,7 +26,7 @@ const fs = require('fs');
  */
 
 module.exports = function (proto, req, res, next) {
-  res.send('Hello wordl!');
+  res.send('Hello world!');
 };
 
 /**
@@ -40,5 +40,5 @@ module.exports = function (proto, req, res, next) {
  */
 
 // exports.myMethod = function (proto, req, res, next) {
-//   res.send('Hello wordl!');
+//   res.send('Hello world!');
 // };
