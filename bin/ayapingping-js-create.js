@@ -7,7 +7,7 @@ var path = require('path');
  * Root dir
  */
 
-var projectDir = 'test';
+var projectDir = '';
 var exampleSourceDir = path.join(__dirname, '../lib/examples');
 
 /**
