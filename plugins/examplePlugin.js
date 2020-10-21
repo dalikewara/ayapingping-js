@@ -46,6 +46,8 @@ const defaultOption = {
 /**
  * Plugin logic & process.
  * 
+ * Example usage (app.js): appjs.load(pluginName, pluginOption)
+ * 
  * This plugin will be registered & stored into system proto 
  * (proto.plugins) as an object.
  * 
@@ -55,7 +57,7 @@ const defaultOption = {
  *  }
  * }
  * 
- * All registered or loaded plugins is saved into system proto
+ * All registered or loaded plugins are saved into system proto
  * (proto.plugins) as an object. 
  * 
  * proto: {
@@ -67,7 +69,7 @@ const defaultOption = {
  * }
  * 
  * You can give a value into the plugin's object by passing
- * it in resolve function. 
+ * it through resolve function. 
  * 
  * Format: resolve(result)
  * 
