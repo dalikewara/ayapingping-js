@@ -1,9 +1,3 @@
-/*!
- * exampleMiddleware.js
- * Copyright(c) 2018-2020 Dali Kewara
- * MIT Licensed
- */
-
 'use strict';
 
 /**
