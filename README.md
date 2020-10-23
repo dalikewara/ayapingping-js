@@ -94,7 +94,7 @@ module.exports = function(proto, req, res, next) {
 Anda juga bisa membuat *route* di `app.js` dengan gaya `ExpressJS` seperti berikut ini:
 
 ```javascript
-appjs.express((mod, app) => {
+appjs.express((proto, app) => {
   // ExpressJS style
   app.get('/my-route', (req, res, next) => {
     res.send('Hello world!');
@@ -137,7 +137,7 @@ PORT=3000
 *Environment variables* di `ayapingping-js` disimpan didalam file `.env`. Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda bisa melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `ayapingping-js system`: (lihat contohnya di `app.js`)
 
 ```javascript
-ayapingping-js.env();
+appjs.env();
 ```
 
 ### Application environment
