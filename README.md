@@ -22,7 +22,9 @@ Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya me
 
 `ayapingping-js v3` merupakan pengembangan dari `v2.1`. Meskipun sebagian besar fungsinya masih mirip dengan `v2.1`, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki di `v3`. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru&mdash;tidak seperti `v0.1` - `v2.1`.
 
-Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin* kita sendiri atau menggunakan *built in plugin* yang tersedia, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengatur jalannya aplikasi.
+Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin* kita sendiri atau menggunakan *built in plugin* yang tersedia, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengatur jalannya aplikasi. Setiap proses dari fungsi `ayapingping-js` yang dipanggil tidak akan langsung dijalankan, melainkan akan didaftarkan dulu kedalam sebuah `stack` sampai fungsi `listen` atau *executor function* dipanggil. *Executor function* digunakan untuk menjalankan semua proses yang ada dan terdaftar di dalam `stack`.
+
+![https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no](https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no)
 
 # Getting started
 
@@ -109,10 +111,10 @@ appjs.express((proto, app) => {
 
 Secara *default* `ayapingping-js` membagi tempat kerja menjadi bagian-bagian berikut:
 
--  **`.env`**
-  *File* untuk konfigurasi *environment variables*.
 -  **`app.js`**
   *File* utama `ayapingping-js` untuk *start/listen*/mengatur jalannya aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
+-  **`.env`**
+  *File* untuk konfigurasi *environment variables*.
 -  **`controllers`**
   *Folder* untuk menaruh *file* `controller` dari *route* yang Anda buat.
 -  **`middlewares`** *(OPTIONAL)*
@@ -124,6 +126,37 @@ Secara *default* `ayapingping-js` membagi tempat kerja menjadi bagian-bagian ber
 - **`public`** *(OPTIONAL)*
   *Folder* untuk menaruh file-file statis. `public` disini bersifat *optional*, karena Anda mungkin tidak menggunakan file-file statis.
 
+# Application
+
+*File* utama `ayapingping-js` untuk mengatur jalannya aplikasi adalah *file* `app.js`. Disinilah tempat kita inisialisasi fungsi-fungsi `ayapingping-js`, membuat *routes*, *listen* aplikasi, me-*load plugin*, dan lain sebagainya. `app.js` juga adalah *file* yang dieksekusi untuk menjalankan aplikasi. Untuk menggunakan fungsi `ayapingping-js`, Anda harus inisialisasi modulnya terlebih dahulu. Silahkan buka *file* `app.js`, kemudian gunakan *script* berikut (lihat contohnya di `app.js`):
+
+```javascript
+const appjs = require('ayapingping-js')(__dirname);
+```
+
+*Script* diatas akan menginisialisasi & mengunggah fungsi-fungsi bawaan `ayapingping-js`sehingga dapat diakses secara *public*. Pada *script* diatas, fungsi-fungsi tersebut disimpan kedalam *variable* `appjs`. Anda kemudian dapat memanggil fungsinya dengan mengakses objeknya, misalnya:
+
+```javascript
+appjs.get('/example');
+```
+
+> `(__dirname)` bersifat *required*, dan diperlukan oleh sistem `ayapingping-js` untuk mendapatkan *root path* dari aplikasi yang dibuat.
+
+### Available `ayapingping-js`'s functions
+
+Berikut adalah fungsi-fungsi bawaan `ayapingping-js` yang tersedia dengan kegunaannya masing-masing:
+
+- `**env()**`
+- `**set()**`
+- `**load()**`
+- `**get()**`
+- `**post()**`
+- `**put()**`
+- `**delete()**`
+- `**group()**`
+- `**express()**`
+- `**listen()**`
+
 # Environment variables
 
 *Environment variables* menentukan bagaimana sistem aplikasi berjalan tergantung pada jenis *environment server* atau komputer yang dipakai. `ayapingping-js` memiliki 3 *environment variables* utama berikut ini yang digunakan ketika aplikasi di *start*:
@@ -134,10 +167,18 @@ SERVICE_NAME=AyaPingPing JS
 PORT=3000
 ```
 
-*Environment variables* di `ayapingping-js` disimpan didalam file `.env`. Anda harus me *load file* `.env` pada saat aplikasi di *start* agar sistem bisa menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda bisa melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `ayapingping-js system`: (lihat contohnya di `app.js`)
+*Environment variables* di `ayapingping-js` disimpan didalam file `.env`. Anda harus membaca dan me-*load file* `.env` pada saat aplikasi di *start* agar sistem dapat menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda bisa melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `ayapingping-js system`: (lihat contohnya di `app.js`)
 
 ```javascript
 appjs.env();
+```
+
+Sangat direkomendasikan menjalankan fungsi untuk membaca file `.env` setelah inisialisasi `ayapingping-js`. Contoh:
+
+```javascript
+const appjs = require('ayapingping-js')(__dirname);
+appjs.env();
+// Some stuff...
 ```
 
 ### Application environment
@@ -171,10 +212,6 @@ PORT=8000
 ```
 
 > `PORT` diperlukan oleh sistem (server) untuk mengidentifikasi proses aplikasi atau *service* yang sedang berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
-
-# Application
-
-### Available `ayapingping-js`'s functions
 
 # Routing
 
