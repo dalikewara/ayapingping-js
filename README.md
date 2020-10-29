@@ -24,8 +24,6 @@ Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya me
 
 Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin* kita sendiri atau menggunakan *built in plugin* yang tersedia, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengatur jalannya aplikasi. Setiap proses dari fungsi `ayapingping-js` yang dipanggil tidak akan langsung dijalankan, melainkan akan didaftarkan dulu kedalam sebuah `stack` sampai fungsi `listen` atau *executor function* dipanggil. *Executor function* digunakan untuk menjalankan semua proses yang ada dan terdaftar di dalam `stack`.
 
-![https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no](https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no)
-
 # Getting started
 
 ### Installation
@@ -146,16 +144,16 @@ appjs.get('/example');
 
 Berikut adalah fungsi-fungsi bawaan `ayapingping-js` yang tersedia dengan kegunaannya masing-masing:
 
-- `**env()**`
-- `**set()**`
-- `**load()**`
-- `**get()**`
-- `**post()**`
-- `**put()**`
-- `**delete()**`
-- `**group()**`
-- `**express()**`
-- `**listen()**`
+- **`env()`**
+- **`set()`**
+- **`load()`**
+- **`get()`**
+- **`post()`**
+- **`put()`**
+- **`delete()`**
+- **`group()`**
+- **`express()`**
+- **`listen()`**
 
 # Environment variables
 
