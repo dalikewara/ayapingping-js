@@ -1,6 +1,6 @@
 {
   "name": "ayapingping-js",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "My starter pack framework in NodeJS for building REST API applications.",
   "main": "app.js",
   "scripts": {
@@ -36,6 +36,7 @@
   "homepage": "https://github.com/dalikewara/ayapingping-js",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-timeout": "^1.9.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.21",
