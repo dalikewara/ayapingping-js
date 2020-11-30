@@ -37,3 +37,4 @@ build
 *.egg-info
 .temp
 temp
+scripts
