@@ -1,6 +1,6 @@
 {
   "name": "ayapingping-js",
-  "version": "3.0.17",
+  "version": "3.0.18",
   "description": "My starter pack framework in NodeJS for building REST API applications.",
   "main": "app.js",
   "scripts": {
