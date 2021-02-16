@@ -1,6 +1,6 @@
 # What is AyaPingPing?
 
-AyaPingPing is the `basename` of my starter pack framework for building REST API applications. The goal is to create a simple, clean, and maintainable application environment that also has advantages in performance and security. The first AyaPingPing was made only for building REST API in NodeJS. It was around 2018/2019, when NodeJS became the only one programming language I worked with. But now, I learn and work with some new programming languages. So, I implement AyaPingPing in other programming languages.
+AyaPingPing is the `basename` of my starter pack framework for building REST API applications. The goal is to create a simple, clean, and maintainable application environment that also has advantages in performance and security. The first AyaPingPing was made only for building REST API in NodeJS. It was around 2018/2019, when NodeJS became the only one programming language I worked with. But now, I learn and work with some new programming languages. So, I also implement AyaPingPing in other programming languages.
 
 # AyaPingPing JS (ayapingping-js)
 
@@ -20,9 +20,11 @@ Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya me
 
 # Welcome to `v3`
 
-`ayapingping-js v3` merupakan pengembangan dari `v2.1`. Meskipun sebagian besar fungsinya masih mirip dengan `v2.1`, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki di `v3`. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru&mdash;tidak seperti `v0.1` - `v2.1`.
+`ayapingping-js v3` merupakan pengembangan dari versi `v2.1`. Meskipun sebagian besar fungsinya masih mirip, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru.
 
-Pada `v3`, AyaPingPing menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin* kita sendiri atau menggunakan *built in plugin* yang tersedia, kemudian mengaktifkan atau menonaktifkannya, sehingga memudahkan kita mengatur jalannya aplikasi. Setiap proses dari fungsi `ayapingping-js` yang dipanggil tidak akan langsung dijalankan, melainkan akan didaftarkan dulu kedalam sebuah `stack` sampai fungsi `listen` atau *executor function* dipanggil. *Executor function* digunakan untuk menjalankan semua proses yang ada dan terdaftar di dalam `stack`.
+Pada `v3`, AyaPingPing adalah sebuah *package*&mdash;serta menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin*  sendiri atau menggunakan *built in plugin* yang sudah tersedia. *Package* `ayapingping-js` juga hadir dengan beragam *built in functions*. Nantinya, fungsi-fungsi tersebut kita pakai untuk mengatur jalannya aplikasi. Setiap proses dari fungsi `ayapingping-js` yang dipanggil tidak akan langsung dijalankan, melainkan akan didaftarkan dulu kedalam sebuah `stack` sampai ada fungsi `listen` atau *executor function* yang dipanggil. *Executor function* digunakan untuk menjalankan semua proses yang ada dan terdaftar di dalam `stack`.
+
+![https://lh3.googleusercontent.com/pw/ACtC-3d4H7WyRJ7XdBAvXeArpuR8KcGsEPINji80KZowgVNdD4KZCfY-UBCanavfQ1dH0GocY-9n25vN_7ENGYAYTZojeiYxca3lxxX1ps_368ezGNZngDEOocw5YZAxuL4U35SdSE-TmPtDdmPHnOhbjDvr=w750-h1334-no](https://lh3.googleusercontent.com/pw/ACtC-3d4H7WyRJ7XdBAvXeArpuR8KcGsEPINji80KZowgVNdD4KZCfY-UBCanavfQ1dH0GocY-9n25vN_7ENGYAYTZojeiYxca3lxxX1ps_368ezGNZngDEOocw5YZAxuL4U35SdSE-TmPtDdmPHnOhbjDvr=w750-h1334-no)
 
 # Getting started
 
@@ -49,9 +51,17 @@ Setelah proses *install* berhasil, eksekusi perintah berikut untuk membuat *work
 
 Perintah diatas akan membuat *folders* dan *files* baru seperti: `app.js`, `.env`, `controllers`, dll yang dibutuhkan untuk memulai menggunakan `ayapingping-js`.
 
+### Getting the latest version
+
+Gunakan perintah berikut untuk melakukan *update* `ayapingping-js` ke versi yang terbaru:
+
+```bash
+npm update ayapingping-js
+```
+
 ### Basic usage
 
-`ayapingping-js` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `ayapingping-js`, silahkan *install* terlebih dahulu sesuai dengan petunjuk *installation* diatas. Masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
+`ayapingping-js` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `ayapingping-js`, silahkan *install* terlebih dahulu sesuai dengan petunjuk installasi diatas. Masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
 
 ```bash
 node app.js
@@ -65,9 +75,9 @@ pm2 start app.js
 
 Jika berhasil, maka akan muncul keterangan "Application is live!" seperti ini:
 
-![https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no](https://lh3.googleusercontent.com/pw/ACtC-3ffSa48lu1Ae3tyAXAYgZqw2EMO7KVueikLpKUAkH3Y3fyMR89KMQfgaQ832MFtjsIPNwzFQM1oCfWjLtpA3SBHy3Tpag6XDO70BIxo4tewcIABU7q3pDVxKj4tpPqmMGQzpp0kYtEqCyQSQouqVffA=w714-h240-no)
+![https://lh3.googleusercontent.com/pw/ACtC-3fXyv2-V38wmHj798L2v3rf_d_wel3p2qIlZY5QiuW5ugQT_Lt_DM9OitVxRIOR6wwDStl0bmdnyFPu4jmsqBvWRUo2W9rUdPMt_JuoGsQUi4DUp6VRjienxLK3ysuXfv9svqeXNtReyVF7hXYPChR7=w714-h214-no](https://lh3.googleusercontent.com/pw/ACtC-3fXyv2-V38wmHj798L2v3rf_d_wel3p2qIlZY5QiuW5ugQT_Lt_DM9OitVxRIOR6wwDStl0bmdnyFPu4jmsqBvWRUo2W9rUdPMt_JuoGsQUi4DUp6VRjienxLK3ysuXfv9svqeXNtReyVF7hXYPChR7=w714-h214-no)
 
-Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda juga bisa *test* dengan membuka browser -> http://localhost:3000.
+Anda kemudian dapat melakukan *request* ke `url` dan `port` tersebut&mdash;Anda juga bisa *test* dengan membuka browser ke -> http://localhost:3000.
 
 ### Simple routing (`ayapingping-js` style)
 
@@ -77,7 +87,7 @@ Anda bisa membuat *route* sederhana di `app.js` dengan format seperti berikut:
 appjs.get('/my-route', 'myRouteController');
 ```
 
-Di *folder* `controller` buat *file* bernama `myRouteController.js` dan isikan:
+Kemudian, di *folder* `controller` buat *file* bernama `myRouteController.js` dan isikan:
 
 ```javascript
 'use strict';
@@ -87,7 +97,9 @@ module.exports = function(proto, req, res, next) {
 };
 ```
 
-*Route* baru berhasil dibuat. Jika Anda mengakses *route* `GET '/my-route'`, maka Anda akan mendapatkan *respon* "Hello world!".
+*Route* baru berhasil dibuat. Jika Anda mengakses *route* `GET '/my-route'`, maka Anda akan mendapatkan *response* "Hello world!".
+
+> `ayapingping-js` adalah *controller-based*. Jadi setiap *route* harus memiliki *controller* untuk meng*handle* *logic* utamanya.
 
 ### Simple routing (`ExpressJS` style)
 
@@ -110,19 +122,19 @@ appjs.express((proto, app) => {
 Secara *default* `ayapingping-js` membagi tempat kerja menjadi bagian-bagian berikut:
 
 -  **`app.js`**
-  *File* utama `ayapingping-js` untuk *start/listen*/mengatur jalannya aplikasi. Selain itu, `app.js` juga tempat untuk membuat *routes* aplikasi.
+  *File* utama `ayapingping-js` untuk *start/listen*/mengatur jalannya aplikasi. `app.js` merupakan tempat untuk membuat *routes*, me-*load* *plugins* dan fungsi-fungsi aplikasi.
 -  **`.env`**
   *File* untuk konfigurasi *environment variables*.
 -  **`controllers`**
-  *Folder* untuk menaruh *file* `controller` dari *route* yang Anda buat.
+  *Folder* untuk menaruh *file-file* `controller` dari *routes* yang Anda buat.
 -  **`middlewares`** *(OPTIONAL)*
-  *Folder* untuk menaruh *file*  `middleware` dari *route* yang Anda buat. `middleware` disini bersifat *optional*, karena Anda boleh membuat *route* tanpa `middleware`.
+  *Folder* untuk menaruh *file-file*  `middleware` dari *routes* yang Anda buat. `middleware` disini bersifat *optional*, karena Anda boleh membuat *route* tanpa `middleware`.
 -  **`models`** *(OPTIONAL)*
-  *Folder* untuk menaruh *file* `model` *database*, misalnya: *Sequelize model* untuk MySQL atau *Mongoose model* untuk Mongo. `model` disini bersifat *optional*, karena Anda mungkin menggunakan mekanisme *raw* daripada model *database*, atau Anda mungkin tidak menggunakan *database* sama sekali.
+  *Folder* untuk menaruh *file-file* `model` *database*, misalnya: *Sequelize model* untuk MySQL atau *Mongoose model* untuk Mongo. `model` disini bersifat *optional*, karena Anda mungkin menggunakan mekanisme *raw* daripada model *database*, atau Anda mungkin tidak menggunakan *database* sama sekali.
 - **`plugin`** *(OPTIONAL)*
-  *Folder* untuk menaruh `plugin` yang Anda buat (*custom plugin*). `plugin` disini bersifat *optional*, karena Anda mungkin tidak menggunakan *custom plugin* sama sekali.
+  *Folder* untuk menaruh *file-file* `plugin` yang Anda buat (*custom plugin*). `plugin` disini bersifat *optional*, karena Anda mungkin tidak menggunakan *custom plugin* sama sekali.
 - **`public`** *(OPTIONAL)*
-  *Folder* untuk menaruh file-file statis. `public` disini bersifat *optional*, karena Anda mungkin tidak menggunakan file-file statis.
+  *Folder* untuk menaruh *file-file* statis. `public` disini bersifat *optional*, karena Anda mungkin tidak menggunakan *file-file* statis.
 
 # Application
 
