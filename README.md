@@ -1,30 +1,28 @@
-# What is AyaPingPing?
+# AyaPingPing JS
 
-AyaPingPing is the `basename` of my starter pack framework for building REST API applications. The goal is to create a simple, clean, and maintainable application environment that also has advantages in performance and security. The first AyaPingPing was made only for building REST API in NodeJS. It was around 2018/2019, when NodeJS became the only one programming language I worked with. But now, I learn and work with some new programming languages. So, I also implement AyaPingPing in other programming languages.
+A starter pack framework in NodeJS for building REST API applications.
 
-# AyaPingPing JS (ayapingping-js)
+[![npm package](https://nodei.co/npm/ayapingping-js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ayapingping-js/)
+[![version](https://img.shields.io/npm/v/ayapingping-js.svg?style=flat)](https://img.shields.io/npm/v/ayapingping-js.svg?style=flat)
+[![build](https://img.shields.io/circleci/project/github/dalikewara/ayapingping-js.svg?style=flat)](https://img.shields.io/circleci/project/github/dalikewara/ayapingping-js.svg?style=flat)
+[![language](https://img.shields.io/github/languages/top/dalikewara/ayapingping-js.svg?style=flat)](https://img.shields.io/github/languages/top/dalikewara/ayapingping-js.svg?style=flat)
+[![download](https://img.shields.io/npm/dt/ayapingping-js.svg?style=flat)](https://img.shields.io/npm/dt/ayapingping-js.svg?style=flat)
+[![dependents](https://img.shields.io/librariesio/dependents/npm/ayapingping-js.svg?style=flat)](https://img.shields.io/librariesio/dependents/npm/ayapingping-js.svg?style=flat)
+[![issue](https://img.shields.io/github/issues/dalikewara/ayapingping-js.svg?style=flat)](https://img.shields.io/github/issues/dalikewara/ayapingping-js.svg?style=flat)
+[![last_commit](https://img.shields.io/github/last-commit/dalikewara/ayapingping-js.svg?style=flat)](https://img.shields.io/github/last-commit/dalikewara/ayapingping-js.svg?style=flat)
+[![license](https://img.shields.io/npm/l/ayapingping-js.svg?style=flat)](https://img.shields.io/npm/l/ayapingping-js.svg?style=flat)
 
-And this is the implementation of AyaPingPing in NodeJS. The name become AyaPingPing JS, or called `ayapingping-js`.
+```javascript
+const  appjs = require('ayapingping-js')(__dirname);
 
-> English documentation would be available soon.
+appjs.get('/my-route', 'myController');
 
-# `ayapingping-js v3`
+appjs.listen();
+```
 
-Kenapa versi 3?
+# Docs
 
-`ayapingping-js v3` adalah versi pertama yang saya rilis untuk umum. AyaPingPing pada awalnya saya buat untuk memenuhi kebutuhan *development* di tempat kerja. Mulai dari `v0.1` hingga terakhir `v2.1` dengan serangkaian optimasi yang terus dilakukan untuk menangani kelemahan-kelematan pada versi sebelumnya. Hingga `v2.1`, AyaPingPing masih bersifat *private*.
-
-AyaPingPing bisa terus berkembang adalah karena kontribusi dari rekan-rekan *developer* di kantor. Mereka mendukung saya, memberikan kritik dan masukan, serta melaporkan *issue*, bahkan rela mengembangkan sistem baru di dalam AyaPingPing&mdash;yang semuanya itu bertujuan membantu agar *framework* ini menjadi lebih baik.
-
-Kontribusi *developer* lain sangatlah penting. Oleh karena itu, saya akhirnya memutuskan merilis AyaPingPing untuk umum. Dengan harapan, AyaPingPing dapat digunakan untuk membantu pekerjaan rekan-rekan *developer* lain di luar sana. Saya juga berharap mendapatkan *feedback*, sehingga kita bisa berkontribusi bersama untuk membuat *framework* ini menjadi lebih baik lagi kedepannya.
-
-# Welcome to `v3`
-
-`ayapingping-js v3` merupakan pengembangan dari versi `v2.1`. Meskipun sebagian besar fungsinya masih mirip, namun *problem* & kelemahan yang muncul di `v2.1` telah diperbaiki. Selain itu, `v3` menggunakan konsep & mekanisme yang benar-benar baru.
-
-Pada `v3`, AyaPingPing adalah sebuah *package*&mdash;serta menawarkan mekanisme *custom plugin* dan *built in plugin*. Kita bisa membuat *plugin*  sendiri atau menggunakan *built in plugin* yang sudah tersedia. *Package* `ayapingping-js` juga hadir dengan beragam *built in functions*. Nantinya, fungsi-fungsi tersebut kita pakai untuk mengatur jalannya aplikasi. Setiap proses dari fungsi `ayapingping-js` yang dipanggil tidak akan langsung dijalankan, melainkan akan didaftarkan dulu kedalam sebuah `stack` sampai ada fungsi `listen` atau *executor function* yang dipanggil. *Executor function* digunakan untuk menjalankan semua proses yang ada dan terdaftar di dalam `stack`.
-
-![https://lh3.googleusercontent.com/pw/ACtC-3d4H7WyRJ7XdBAvXeArpuR8KcGsEPINji80KZowgVNdD4KZCfY-UBCanavfQ1dH0GocY-9n25vN_7ENGYAYTZojeiYxca3lxxX1ps_368ezGNZngDEOocw5YZAxuL4U35SdSE-TmPtDdmPHnOhbjDvr=w750-h1334-no](https://lh3.googleusercontent.com/pw/ACtC-3d4H7WyRJ7XdBAvXeArpuR8KcGsEPINji80KZowgVNdD4KZCfY-UBCanavfQ1dH0GocY-9n25vN_7ENGYAYTZojeiYxca3lxxX1ps_368ezGNZngDEOocw5YZAxuL4U35SdSE-TmPtDdmPHnOhbjDvr=w750-h1334-no)
+ - For full documentation, visit the [Wiki](https://github.com/dalikewara/ayapingping-js/wiki)
 
 # Getting started
 
@@ -117,148 +115,26 @@ appjs.express((proto, app) => {
 });
 ```
 
-# Working directory
+# Contributing
 
-Secara *default* `ayapingping-js` membagi tempat kerja menjadi bagian-bagian berikut:
+Follow the Contributing Guide (updated soon).
 
--  **`app.js`**
-  *File* utama `ayapingping-js` untuk *start/listen*/mengatur jalannya aplikasi. `app.js` merupakan tempat untuk membuat *routes*, me-*load* *plugins* dan fungsi-fungsi aplikasi.
--  **`.env`**
-  *File* untuk konfigurasi *environment variables*.
--  **`controllers`**
-  *Folder* untuk menaruh *file-file* `controller` dari *routes* yang Anda buat.
--  **`middlewares`** *(OPTIONAL)*
-  *Folder* untuk menaruh *file-file*  `middleware` dari *routes* yang Anda buat. `middleware` disini bersifat *optional*, karena Anda boleh membuat *route* tanpa `middleware`.
--  **`models`** *(OPTIONAL)*
-  *Folder* untuk menaruh *file-file* `model` *database*, misalnya: *Sequelize model* untuk MySQL atau *Mongoose model* untuk Mongo. `model` disini bersifat *optional*, karena Anda mungkin menggunakan mekanisme *raw* daripada model *database*, atau Anda mungkin tidak menggunakan *database* sama sekali.
-- **`plugin`** *(OPTIONAL)*
-  *Folder* untuk menaruh *file-file* `plugin` yang Anda buat (*custom plugin*). `plugin` disini bersifat *optional*, karena Anda mungkin tidak menggunakan *custom plugin* sama sekali.
-- **`public`** *(OPTIONAL)*
-  *Folder* untuk menaruh *file-file* statis. `public` disini bersifat *optional*, karena Anda mungkin tidak menggunakan *file-file* statis.
+### People
 
-# Application
+Thanks to all people who took their time to contribute to this project.
 
-*File* utama `ayapingping-js` untuk mengatur jalannya aplikasi adalah *file* `app.js`. Disinilah tempat kita inisialisasi fungsi-fungsi `ayapingping-js`, membuat *routes*, *listen* aplikasi, me-*load plugin*, dan lain sebagainya. `app.js` juga adalah *file* yang dieksekusi untuk menjalankan aplikasi. Untuk menggunakan fungsi `ayapingping-js`, Anda harus inisialisasi modulnya terlebih dahulu. Silahkan buka *file* `app.js`, kemudian gunakan *script* berikut (lihat contohnya di `app.js`):
+[List of all contributors](https://github.com/dalikewara/ayapingping-js/graphs/contributors)
 
-```javascript
-const appjs = require('ayapingping-js')(__dirname);
-```
+# Release
 
-*Script* diatas akan menginisialisasi & mengunggah fungsi-fungsi bawaan `ayapingping-js`sehingga dapat diakses secara *public*. Pada *script* diatas, fungsi-fungsi tersebut disimpan kedalam *variable* `appjs`. Anda kemudian dapat memanggil fungsinya dengan mengakses objeknya, misalnya:
+### Changelog
 
-```javascript
-appjs.get('/example');
-```
+See [https://github.com/dalikewara/ayapingping-js/blob/master/CHANGELOG.md](https://github.com/dalikewara/ayapingping-js/blob/master/CHANGELOG.md)
 
-> `(__dirname)` bersifat *required*, dan diperlukan oleh sistem `ayapingping-js` untuk mendapatkan *root path* dari aplikasi yang dibuat.
+### Credits
 
-### Available `ayapingping-js`'s functions
+Copyright &copy; 2020 - 2021 [Dali Kewara](https://www.dalikewara.com)
 
-Berikut adalah fungsi-fungsi bawaan `ayapingping-js` yang tersedia dengan kegunaannya masing-masing:
+### License
 
-- **`env()`**
-- **`set()`**
-- **`load()`**
-- **`get()`**
-- **`post()`**
-- **`put()`**
-- **`delete()`**
-- **`group()`**
-- **`express()`**
-- **`listen()`**
-
-# Environment variables
-
-*Environment variables* menentukan bagaimana sistem aplikasi berjalan tergantung pada jenis *environment server* atau komputer yang dipakai. `ayapingping-js` memiliki 3 *environment variables* utama berikut ini yang digunakan ketika aplikasi di *start*:
-
-```
-NODE_ENV=development
-SERVICE_NAME=AyaPingPing JS
-PORT=3000
-```
-
-*Environment variables* di `ayapingping-js` disimpan didalam file `.env`. Anda harus membaca dan me-*load file* `.env` pada saat aplikasi di *start* agar sistem dapat menggunakan *variable-variable*nya. Ada banyak cara, tapi Anda bisa melakukan hal ini dengan memanggil fungsi *environment variables* setelah inisialisasi `ayapingping-js system`: (lihat contohnya di `app.js`)
-
-```javascript
-appjs.env();
-```
-
-Sangat direkomendasikan menjalankan fungsi untuk membaca file `.env` setelah inisialisasi `ayapingping-js`. Contoh:
-
-```javascript
-const appjs = require('ayapingping-js')(__dirname);
-appjs.env();
-// Some stuff...
-```
-
-### Application environment
-
-`NODE_ENV` mengatur mode *environment* aplikasi yang sedang berjalan, *default*: "development". Untuk merubah *environment* aplikasi ke mode `production`, ubah nilai `NODE_ENV` menjadi "production":
-
-```
-NODE_ENV=production
-```
-
-> `NODE_ENV` dipakai oleh ExpressJS untuk menentukan *environment* aplikasi.
-> 
-> Selalu gunakan mode `production` apabila Anda ingin melakukan *deployment* ke arsitektur atau *environment production*.
-
-### Service name
-
-`SERVICE_NAME` adalah nama dari aplikasi `ayapingping-js`, *default*: "AyaPingPing JS". Anda bisa merubahnya sesuai dengan nama aplikasi yang sedang Anda buat, misalnya:
-
-```
-SERVICE_NAME=My Application
-```
-
-> `SERVICE_NAME` dipakai untuk beberapa hal di dalam sistem aplikasi, misalnya: nama aplikasi yang ditampilkan di `console`.
-
-### Port
-
-`PORT` menentukan *port* yang akan di listen pada saat aplikasi dijalankan, default: "3000". Anda bisa merubah pengaturan *port*nya sesuai dengan kebutuhan, misalnya:
-
-```
-PORT=8000
-```
-
-> `PORT` diperlukan oleh sistem (server) untuk mengidentifikasi proses aplikasi atau *service* yang sedang berjalan. Jika `port` tidak di *set*, maka akan di *set default* menjadi "3000".
-
-# Routing
-
-### Route functions
-
-### Route controller
-
-### Route middleware
-
-### Grouping
-
-### ExpressJS style
-
-# Controllers
-
-### Using controller
-
-### Using controller method
-
-# Middlewares
-
-### Using middleware
-
-### Using middleware method
-
-# Models
-
-### MySQL model
-
-### Mongo model
-
-# Plugins
-
-### How to create plugins
-
-### How to use plugins
-
-### Built in plugins
-
-# Public
+[MIT License](https://github.com/dalikewara/ayapingping-js/blob/master/LICENSE)
