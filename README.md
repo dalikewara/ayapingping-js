@@ -25,7 +25,7 @@ appjs.listen();
 
  - Using the power of [ExpressJS](https://github.com/expressjs/express)
  - Allows you to use most of ExpressJS operations (using `express` function)
- - Easy implementation
+ - Easy implementation & customization
  - Controller-based routing
  - Focus on simplicity & performance
  - Plugin mechanism (custom plugin & built in plugin)
