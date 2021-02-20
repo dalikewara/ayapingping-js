@@ -53,6 +53,9 @@ var modelMysqlExampleSource = path.join(exampleSourceDir, '__exampleMySQLModel__
 var modelMongoDir = path.join(modelDir, 'mongo');
 var modelMongoExample = path.join(modelMongoDir, 'example.js');
 var modelMongoExampleSource = path.join(exampleSourceDir, '__exampleMongoModel__.js');
+var modelPostgresDir = path.join(modelDir, 'postgres');
+var modelPostgresExample = path.join(modelPostgresDir, 'example.js');
+var modelPostgresExampleSource = path.join(exampleSourceDir, '__examplePostgresModel__.js');
 
 /**
  * Env
@@ -105,6 +108,10 @@ if (!fs.existsSync(modelMysqlDir)) {
 if (!fs.existsSync(modelMongoDir)) {
   fs.mkdirSync(modelMongoDir);
   console.log('Create "Mongo Model" folder (ok)');
+}
+if (!fs.existsSync(modelPostgresDir)) {
+  fs.mkdirSync(modelPostgresDir);
+  console.log('Create "Postgres Model" folder (ok)');
 }
 
 /**
@@ -162,6 +169,15 @@ if (!fs.existsSync(modelMongoExample)) {
     fs.writeFile(modelMongoExample, data, function (err) {
       if (err) throw new Error(err);
       console.log('Create "Mongo Model" example (ok)');
+    });
+  });
+}
+if (!fs.existsSync(modelPostgresExample)) {
+  fs.readFile(modelPostgresExampleSource, 'utf8', function (err, data) {
+    if (err) throw new Error(err);
+    fs.writeFile(modelPostgresExample, data, function (err) {
+      if (err) throw new Error(err);
+      console.log('Create "Postgres Model" example (ok)');
     });
   });
 }
