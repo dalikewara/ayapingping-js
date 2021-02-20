@@ -3,6 +3,7 @@
 A starter pack framework in NodeJS for building REST API applications.
 
 [![npm package](https://nodei.co/npm/ayapingping-js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ayapingping-js/)
+
 [![version](https://img.shields.io/npm/v/ayapingping-js.svg?style=flat)](https://img.shields.io/npm/v/ayapingping-js.svg?style=flat)
 [![build](https://img.shields.io/circleci/project/github/dalikewara/ayapingping-js.svg?style=flat)](https://img.shields.io/circleci/project/github/dalikewara/ayapingping-js.svg?style=flat)
 [![language](https://img.shields.io/github/languages/top/dalikewara/ayapingping-js.svg?style=flat)](https://img.shields.io/github/languages/top/dalikewara/ayapingping-js.svg?style=flat)
@@ -13,7 +14,7 @@ A starter pack framework in NodeJS for building REST API applications.
 [![license](https://img.shields.io/npm/l/ayapingping-js.svg?style=flat)](https://img.shields.io/npm/l/ayapingping-js.svg?style=flat)
 
 ```javascript
-const  appjs = require('ayapingping-js')(__dirname);
+const appjs = require('ayapingping-js')(__dirname);
 
 appjs.get('/my-route', 'myController');
 
@@ -129,7 +130,7 @@ Thanks to all people who took their time to contribute to this project.
 
 ### Changelog
 
-See [https://github.com/dalikewara/ayapingping-js/blob/master/CHANGELOG.md](https://github.com/dalikewara/ayapingping-js/blob/master/CHANGELOG.md)
+Read at [CHANGELOG.md](https://github.com/dalikewara/ayapingping-js/blob/master/CHANGELOG.md)
 
 ### Credits
 
