@@ -21,6 +21,16 @@ appjs.get('/my-route', 'myController');
 appjs.listen();
 ```
 
+# Features
+
+ - Using the power of [ExpressJS](https://github.com/expressjs/express)
+ - Allows you to use most of ExpressJS operations (using `express` function)
+ - Easy implementation
+ - Controller-based routing
+ - Focus on simplicity & performance
+ - Plugin mechanism (custom plugin & built in plugin)
+ - Executable for generating applications project structure quickly (`./node_modules/.bin/ayapingping-js-create`)
+
 # Docs
 
  - For full documentation, visit the [Wiki](https://github.com/dalikewara/ayapingping-js/wiki)
@@ -58,7 +68,7 @@ Gunakan perintah berikut untuk melakukan *update* `ayapingping-js` ke versi yang
 npm update ayapingping-js
 ```
 
-### Basic usage
+# Basic usage
 
 `ayapingping-js` berbasis `ExpressJS`. Bagi yang familiar dengan `ExpressJS` tentu akan lebih mudah. Untuk menggunakan `ayapingping-js`, silahkan *install* terlebih dahulu sesuai dengan petunjuk installasi diatas. Masuk ke *folder project* Anda, kemudian buka terminal baru dan eksekusi file `app.js` menggunakan perintah berikut ini untuk menjalankan aplikasi:
 
